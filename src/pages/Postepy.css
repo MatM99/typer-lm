@@ -1,0 +1,151 @@
+/* Domyślnie na komputerze pokazujemy pełne nazwy i ukrywamy mobile-bonus */
+.team-name-short {
+    display: none !important;
+}
+
+.team-name-full {
+    display: inline !important;
+}
+
+.mobile-bonus {
+    display: none !important;
+}
+
+.desktop-bonus {
+    display: inline-flex !important;
+}
+
+@media (max-width: 768px) {
+
+    /* Lekkie marginesy boczne na mobile (okienko nie przylega do krawędzi ekranu) */
+    main {
+        padding: 0 10px !important;
+        margin: 15px auto !important;
+        max-width: 100% !important;
+    }
+
+    .progress-container {
+        border-radius: 10px !important;
+    }
+
+    /* Przełączniki widoczności bonusów na mobile */
+    .mobile-bonus {
+        display: inline-flex !important;
+        gap: 4px !important;
+    }
+
+    .desktop-bonus {
+        display: none !important;
+    }
+
+    /* Na telefonie pokazujemy skróty z bazy, pełne nazwy ukrywamy */
+    .team-name-short {
+        display: inline !important;
+        font-weight: bold;
+        font-size: 11.5px !important;
+    }
+
+    .team-name-full {
+        display: none !important;
+    }
+
+    /* Nieco większe herby na telefonie dla lepszej widoczności */
+    .progress-crest {
+        width: 15px !important;
+        height: 15px !important;
+        object-fit: contain !important;
+    }
+
+    /* Tabela mobilna w zwartej formie */
+    .progress-table {
+        display: table !important;
+        width: 100% !important;
+        table-layout: fixed !important;
+    }
+
+    .progress-table thead {
+        display: table-header-group !important;
+    }
+
+    .progress-table tbody {
+        display: table-row-group !important;
+    }
+
+    .progress-table tr {
+        display: table-row !important;
+    }
+
+    .progress-table th,
+    .progress-table td {
+        display: table-cell !important;
+        box-sizing: border-box !important;
+        vertical-align: middle !important;
+    }
+
+    /* Nagłówki tabeli */
+    .progress-thead th {
+        padding: 8px 3px !important;
+        font-size: 10px !important;
+        color: #94a3b8 !important;
+        text-align: center !important;
+        background-color: rgba(15, 23, 42, 0.95) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .progress-thead th:first-child {
+        text-align: left !important;
+        padding-left: 8px !important;
+    }
+
+    .progress-thead th:last-child {
+        text-align: right !important;
+        padding-right: 8px !important;
+    }
+
+    /* Wiersze z danymi */
+    .progress-row {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+        height: auto !important;
+    }
+
+    .progress-row td {
+        padding: 9px 3px !important;
+    }
+
+    /* Szerokości i zawartość kolumn na mobile */
+    .progress-col-match {
+        width: 44% !important;
+        text-align: left !important;
+        padding-left: 8px !important;
+    }
+
+    .progress-date {
+        font-size: 9.5px !important;
+        color: #64748b !important;
+    }
+
+    .progress-col-score {
+        width: 26% !important;
+        text-align: center !important;
+        font-size: 11px !important;
+    }
+
+    .progress-col-pts {
+        width: 14% !important;
+        text-align: center !important;
+    }
+
+    .progress-col-pts span {
+        padding: 2px 5px !important;
+        font-size: 10px !important;
+    }
+
+    .progress-col-total {
+        width: 16% !important;
+        text-align: right !important;
+        padding-right: 8px !important;
+        font-size: 11px !important;
+        font-weight: bold !important;
+        color: #4ade80 !important;
+    }
+}

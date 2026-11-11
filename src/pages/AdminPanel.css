@@ -1,0 +1,320 @@
+.admin-main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* --- NAGŁÓWEK I ZAKŁADKI --- */
+.admin-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.admin-title {
+    color: #facc15;
+    font-size: 24px;
+    margin: 0;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.admin-tab-btn {
+    background-color: #1e293b;
+    color: white;
+    border: 1px solid #334155;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.admin-tab-btn.active {
+    background-color: #2563eb;
+}
+
+.admin-tab-btn:hover:not(.active) {
+    background-color: #334155;
+}
+
+/* --- KONTROLKI I SEKCJE --- */
+.admin-controls {
+    margin-bottom: 20px;
+}
+
+.admin-label {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-right: 10px;
+}
+
+.admin-select {
+    background-color: #0f172a;
+    color: #38bdf8;
+    border: 1px solid #334155;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
+
+.admin-section {
+    background-color: rgba(15, 23, 42, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    margin-bottom: 30px;
+}
+
+.admin-section-title {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    color: #38bdf8;
+}
+
+.admin-section-subtitle {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+/* --- FORMULARZ DODAWANIA MECZU --- */
+.add-match-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.add-match-input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    flex: 1;
+    min-width: 150px;
+}
+
+.add-match-btn {
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-match-btn:hover {
+    background-color: #16a34a;
+}
+
+.vs-text {
+    font-weight: bold;
+}
+
+/* --- LISTA MECZÓW --- */
+.matches-list-container {
+    background-color: rgba(15, 23, 42, 0.85);
+    border-radius: 10px;
+    border: 1px solid #334155;
+    overflow: hidden;
+}
+
+.matches-list-header {
+    padding: 15px 20px;
+    margin: 0;
+    background-color: #0f172a;
+    border-bottom: 1px solid #334155;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.matches-list-content {
+    max-height: 500px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.empty-state {
+    padding: 30px;
+    text-align: center;
+    color: #64748b;
+}
+
+/* --- POJEDYNCZY MECZ (MatchRow) --- */
+.match-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid #334155;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.match-team {
+    width: 150px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.match-team.right {
+    text-align: right;
+}
+
+.match-score-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.score-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    outline: none;
+    cursor: ns-resize;
+}
+
+.score-divider {
+    font-weight: bold;
+    color: #64748b;
+    font-size: 18px;
+}
+
+.date-input {
+    width: 140px;
+    padding: 8px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: #38bdf8;
+    border-radius: 6px;
+    font-size: 12px;
+    outline: none;
+}
+
+.extra-info-input {
+    width: 90px;
+    padding: 8px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: #facc15;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: center;
+    outline: none;
+}
+
+.winner-select {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
+
+.winner-select.has-winner {
+    color: #4ade80;
+}
+
+.winner-select.no-winner {
+    color: #94a3b8;
+}
+
+.completed-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.save-btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* --- DRABINKA ADMINA --- */
+.admin-bracket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.admin-bracket-row {
+    background-color: #0f172a;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.admin-bracket-label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #38bdf8;
+    min-width: 240px;
+}
+
+.admin-bracket-select {
+    flex: 1;
+    background-color: #1e293b;
+    color: white;
+    border: 1px solid #475569;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Pozostałe elementy drabinki graficznej stylizuję inline dla pewności struktury */

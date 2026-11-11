@@ -1,0 +1,533 @@
+.wyniki-main {
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 15px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* WERSJA KOMPUTEROWA - Skróty schowane, pełne nazwy widoczne */
+.team-name-short {
+    display: none !important;
+}
+
+.team-name-full {
+    display: inline !important;
+}
+
+/* --- TABS --- */
+.wyniki-tabs-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.wyniki-tab-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: #1e293b;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wyniki-tab-btn.active {
+    border-color: #38bdf8;
+    background-color: #2563eb;
+}
+
+.wyniki-loading {
+    padding: 60px;
+    text-align: center;
+    color: #38bdf8;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* --- TABELA LIGOWA --- */
+.tabela-wrapper {
+    background-color: rgba(15, 23, 42, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    overflow-x: auto;
+}
+
+.tabela-header-row {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tabela-title {
+    margin: 0;
+    color: #38bdf8;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.tabela-legend {
+    display: flex;
+    gap: 15px;
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dot-green {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    border-radius: 50%;
+}
+
+.dot-yellow {
+    width: 8px;
+    height: 8px;
+    background-color: #eab308;
+    border-radius: 50%;
+}
+
+.tabela-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.tabela-thead-tr {
+    background-color: #0f172a;
+    color: #94a3b8;
+    border-bottom: 1px solid #334155;
+    height: 40px;
+}
+
+.tabela-table th,
+.tabela-table td {
+    padding: 10px;
+}
+
+.tabela-tbody-tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    height: 45px;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.tabela-tbody-tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.rank-green {
+    color: #4ade80;
+    font-weight: bold;
+}
+
+.rank-yellow {
+    color: #facc15;
+    font-weight: bold;
+}
+
+.rank-gray {
+    color: #94a3b8;
+    font-weight: bold;
+}
+
+.team-link {
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.team-link:hover {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+.text-gray {
+    color: #94a3b8;
+}
+
+.pts-col {
+    font-weight: 900;
+    color: #38bdf8;
+    font-size: 14px;
+}
+
+/* --- WYNIKI MECZÓW --- */
+.wyniki-controls {
+    margin-bottom: 20px;
+}
+
+.wyniki-label {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-right: 10px;
+}
+
+.custom-select {
+    background-color: #0f172a;
+    color: #38bdf8;
+    border: 1px solid #334155;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
+
+.matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.empty-state {
+    padding: 40px;
+    text-align: center;
+    color: #64748b;
+    background-color: rgba(15, 23, 42, 0.5);
+    border-radius: 10px;
+    border: 1px solid #334155;
+}
+
+.match-row {
+    background-color: rgba(15, 23, 42, 0.75);
+    padding: 14px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.match-team {
+    flex: 1;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.match-team.right {
+    text-align: right;
+}
+
+.match-team.left {
+    text-align: left;
+}
+
+.match-score-box {
+    margin: 0 20px;
+    background-color: #0f172a;
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    font-weight: 900;
+    min-width: 60px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.score-completed {
+    color: #38bdf8;
+}
+
+.score-pending {
+    color: #64748b;
+}
+
+.extra-info {
+    font-size: 10px;
+    color: #ef4444;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+/* --- DRABINKA PUCHAROWA --- */
+.drabinka-wrapper {
+    background-color: rgba(15, 23, 42, 0.75);
+    padding: 20px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.drabinka-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.drabinka-title {
+    color: #facc15;
+    margin: 0 0 8px 0;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.drabinka-subtitle {
+    color: #94a3b8;
+    font-size: 13px;
+    margin: 0;
+}
+
+.drabinka-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.drabinka-col-around {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.drabinka-col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.drabinka-col-center-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bracket-card {
+    background-color: #0f172a;
+    padding: 10px 8px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bracket-card.is-placeholder {
+    opacity: 0.6;
+}
+
+.bracket-card.is-final {
+    border: 2px solid #facc15;
+    box-shadow: 0 0 16px rgba(250, 204, 21, 0.3);
+}
+
+.bracket-label {
+    font-size: 11px;
+    color: #38bdf8;
+    font-weight: 900;
+    margin-bottom: 6px;
+}
+
+.bracket-label.is-final {
+    color: #facc15;
+}
+
+.bracket-team {
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s ease;
+}
+
+.bracket-team.valid {
+    color: #ffffff;
+}
+
+.bracket-team.placeholder {
+    color: #94a3b8;
+}
+
+.bracket-team.tbd {
+    color: #facc15;
+}
+
+.bracket-team.interactive {
+    cursor: pointer;
+}
+
+.bracket-team.interactive:hover {
+    color: #38bdf8;
+}
+
+.bracket-score-container {
+    background-color: #1e293b;
+    padding: 6px 4px;
+    border-radius: 6px;
+    margin: 6px 0;
+    border: 1px solid #334155;
+}
+
+.bracket-score {
+    font-size: 14px;
+    color: #facc15;
+    font-weight: bold;
+}
+
+.bracket-first-leg {
+    font-size: 10px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+/* --- WYNIKI DRUŻYNY --- */
+.team-results-wrapper {
+    background-color: rgba(15, 23, 42, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.team-results-title {
+    margin: 0 0 15px 0;
+    font-size: 17px;
+    color: #38bdf8;
+}
+
+.team-match-row {
+    background-color: #0f172a;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-match-stage {
+    font-size: 12px;
+    color: #94a3b8;
+    width: 150px;
+}
+
+.team-match-content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.team-name {
+    flex: 1;
+    font-size: 15px;
+}
+
+.team-name.right {
+    text-align: right;
+}
+
+.team-name.left {
+    text-align: left;
+}
+
+.team-name.highlight {
+    font-weight: 900;
+    color: #38bdf8;
+}
+
+.team-name.normal {
+    font-weight: bold;
+    color: white;
+}
+
+.team-match-score {
+    margin: 0 15px;
+    background-color: #1e293b;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #facc15;
+    text-align: center;
+}
+
+/* ==============================================================
+   WERSJA MOBILNA 
+   ============================================================== */
+@media (max-width: 768px) {
+
+    /* Pokazujemy skróty z bazy zamiast pełnych nazw w całej zakładce */
+    .team-name-short {
+        display: inline !important;
+        font-weight: bold;
+    }
+
+    .team-name-full {
+        display: none !important;
+    }
+
+    /* Dopasowanie marginesów z lewej i z prawej */
+    .wyniki-main {
+        padding: 0 5px !important;
+    }
+
+    /* WYNIKI MECZÓW (Wyśrodkowane, zgrabna jedna linia na mobile) */
+    .match-row {
+        padding: 10px 5px !important;
+        gap: 4px !important;
+    }
+
+    .match-team {
+        font-size: 12px !important;
+    }
+
+    .match-score-box {
+        margin: 0 5px !important;
+        padding: 6px 10px !important;
+        font-size: 14px !important;
+        min-width: 50px !important;
+    }
+
+    /* WYNIKI DRUŻYNY (Faza u góry na środku, wynik idealnie pod spodem w linii) */
+    .team-match-row {
+        flex-direction: column !important;
+        padding: 10px 5px !important;
+        gap: 8px !important;
+    }
+
+    .team-match-stage {
+        width: 100% !important;
+        text-align: center !important;
+        font-size: 11px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .team-match-content {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    .team-name {
+        font-size: 12px !important;
+        flex: 1 !important;
+    }
+
+    .team-match-score {
+        margin: 0 5px !important;
+        padding: 6px 10px !important;
+        font-size: 14px !important;
+    }
+}

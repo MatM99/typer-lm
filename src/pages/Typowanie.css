@@ -1,0 +1,504 @@
+.typowanie-wrapper {
+    box-sizing: border-box;
+    /* Zabezpiecza przed wychodzeniem za krawędź */
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.typowanie-wrapper * {
+    box-sizing: border-box;
+}
+
+/* --- PASEK GÓRNY --- */
+.typowanie-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.typowanie-select {
+    background-color: #0f172a;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.typowanie-select.league {
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.5);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.typowanie-select.knockout {
+    color: #facc15;
+    border: 1px solid rgba(250, 204, 21, 0.5);
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.2);
+}
+
+.typowanie-btn-group {
+    display: flex;
+    gap: 12px;
+}
+
+.typowanie-btn-secondary {
+    background-color: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #38bdf8;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.typowanie-btn-secondary:hover {
+    background-color: rgba(30, 41, 59, 0.9);
+}
+
+.typowanie-btn-primary {
+    border: none;
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.typowanie-btn-primary.active {
+    background-color: #22c55e;
+    cursor: pointer;
+    box-shadow: 0 0 16px rgba(34, 197, 94, 0.5);
+}
+
+.typowanie-btn-primary.disabled {
+    background-color: rgba(51, 65, 85, 0.5);
+    cursor: not-allowed;
+}
+
+/* --- TABELA MECZÓW --- */
+.typowanie-card {
+    background-color: rgba(15, 23, 42, 0.75);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.typowanie-empty {
+    padding: 50px;
+    text-align: center;
+    color: #64748b;
+}
+
+.typowanie-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.typowanie-table thead tr {
+    background-color: rgba(15, 23, 42, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.typowanie-table th {
+    padding: 14px;
+    text-align: center;
+}
+
+.typowanie-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    height: 72px;
+    transition: background-color 0.2s ease;
+}
+
+.typowanie-row.urgent {
+    background-color: rgba(245, 158, 11, 0.04);
+}
+
+.typowanie-row td {
+    padding: 14px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* --- DATA MECZU --- */
+.match-date-cell {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.match-date-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.urgent-icon {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.match-time {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.match-day {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.match-countdown {
+    font-weight: bold;
+    color: #facc15;
+    font-family: monospace;
+    font-size: 11px;
+    margin-top: 2px;
+    text-align: center;
+}
+
+/* --- DRUŻYNY --- */
+.team-cell {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.team-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: color 0.2s ease;
+    text-decoration: none;
+}
+
+.team-link-home {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.team-link-away {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.team-link:hover {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.team-crest {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    background: transparent;
+}
+
+.team-text {
+    display: block;
+    line-height: 1.3;
+}
+
+/* --- INPUTY I WYNIK --- */
+.score-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.score-divider {
+    color: #64748b;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.score-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 17px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.score-input.active {
+    background-color: #0f172a;
+}
+
+.score-input.locked {
+    background-color: rgba(30, 41, 59, 0.6);
+    cursor: not-allowed;
+}
+
+.score-input.saved {
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.score-input.unsaved {
+    border: 2px solid #f59e0b;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+.save-single-btn {
+    position: absolute;
+    right: -36px;
+    background-color: #22c55e;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    padding: 5px 7px;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(34, 197, 94, 0.4);
+}
+
+.match-result-badge {
+    background-color: #0f172a;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #38bdf8;
+    font-size: 14px;
+    display: inline-block;
+}
+
+/* --- ODZNAKI / PUNKTY --- */
+.points-badge {
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.bonus-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+.loading-screen {
+    padding: 60px;
+    text-align: center;
+    color: #38bdf8;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* =========================================
+   WERSJA MOBILNA (Pełna kontrola nad responsywnością)
+   ========================================= */
+@media (max-width: 768px) {
+    .typowanie-wrapper {
+        margin: 15px auto;
+        padding: 0 10px;
+        overflow-x: hidden;
+        /* Odcina wszystko, co psuje szerokość ekranu */
+    }
+
+    .typowanie-top-bar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* NAPRAWA: Zmieniamy kierunek ułożenia przycisków, żeby na małym ekranie zrzucały się jeden pod drugi zamiast rozpychać ekran */
+    .typowanie-btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .typowanie-select,
+    .typowanie-btn-group button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .typowanie-card {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .typowanie-table,
+    .typowanie-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .typowanie-table thead {
+        display: none;
+    }
+
+    .typowanie-row {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 15px 5px;
+        padding: 16px 12px;
+        margin-bottom: 20px;
+        background-color: rgba(15, 23, 42, 0.95);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        height: auto;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .typowanie-row.urgent {
+        background-color: rgba(245, 158, 11, 0.08);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .typowanie-row td {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+    }
+
+    /* Poprawka: data i odliczanie ustawione jedno pod drugim w pionie */
+    .typowanie-row td:nth-child(1) { 
+        grid-column: 1 / -1; 
+        grid-row: 1; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+        padding-bottom: 12px; 
+        flex-direction: column; /* Wymusza układ pionowy */
+        gap: 4px; /* Odstęp między datą a licznikiem */
+    }
+
+    .typowanie-row td:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .typowanie-row td:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+        padding-bottom: 30px;
+    }
+
+    .typowanie-row td:nth-child(4) {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .typowanie-row td:nth-child(5) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .typowanie-row td:nth-child(6) {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .typowanie-row td:nth-child(7) {
+        grid-column: 3;
+        grid-row: 3;
+    }
+
+    /* Bez inline styli w JSX, CSS swobodnie układa elementy jako kolumny */
+    .team-link {
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .team-link-away {
+        flex-direction: column;
+    }
+
+    .team-text {
+        font-size: 13px;
+        line-height: 1.2;
+    }
+
+    .team-crest {
+        width: 36px;
+        height: 36px;
+    }
+
+    .save-single-btn {
+        right: 50%;
+        bottom: -32px;
+        transform: translateX(50%);
+        padding: 6px 16px;
+        font-size: 14px;
+        border-radius: 8px;
+        width: max-content;
+    }
+
+    .typowanie-row td:nth-child(5),
+    .typowanie-row td:nth-child(6),
+    .typowanie-row td:nth-child(7) {
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 5px;
+    }
+
+    .typowanie-row td:nth-child(5)::before {
+        content: "WYNIK";
+        font-size: 9px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #64748b;
+    }
+
+    .typowanie-row td:nth-child(6)::before {
+        content: "BONUS";
+        font-size: 9px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #64748b;
+    }
+
+    .typowanie-row td:nth-child(7)::before {
+        content: "PUNKTY";
+        font-size: 9px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #64748b;
+    }
+
+    .match-result-badge {
+        font-size: 13px;
+        padding: 4px 10px;
+    }
+}

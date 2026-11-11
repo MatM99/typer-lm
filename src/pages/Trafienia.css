@@ -1,0 +1,81 @@
+/* Układ komputerowy pozostaje w 100% nienaruszony. Poniższe reguły dotyczą wyłącznie urządzeń mobilnych. */
+@media (max-width: 768px) {
+
+    /* Główne okienko tabeli trafień na telefonie */
+    .hits-table-container {
+        border-radius: 10px !important;
+        overflow-x: auto !important;
+    }
+
+    .hits-table-container table {
+        width: 100% !important;
+        table-layout: fixed !important;
+        /* Sztywne trzymanie proporcji kolumn, nic się nie rozjedzie */
+        font-size: 12px !important;
+    }
+
+    .hits-thead th {
+        padding: 10px 6px !important;
+        font-size: 11px !important;
+        white-space: nowrap !important;
+    }
+
+    .hits-row td {
+        padding: 10px 6px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    /* Precyzyjne proporcje kolumn na wąskim ekranie telefonu */
+    .hits-row td:nth-child(1),
+    .hits-thead th:nth-child(1) {
+        width: 38% !important;
+        /* Gracz */
+        text-align: left !important;
+    }
+
+    .hits-row td:nth-child(2),
+    .hits-thead th:nth-child(2) {
+        width: 32% !important;
+        /* Typ */
+        text-align: center !important;
+    }
+
+    .hits-row td:nth-child(3),
+    .hits-thead th:nth-child(3) {
+        width: 30% !important;
+        /* Punkty */
+        text-align: right !important;
+    }
+
+    /* Zabezpieczenie nazwy gracza przed brzydkim łamaniem */
+    .hits-row td:nth-child(1) span {
+        display: block !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+
+    /* Wygodne pozycjonowanie etykiety bonusu (Joker/Boost) obok wyniku na telefonie */
+    .hits-row td:nth-child(2)>div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2px !important;
+        min-width: unset !important;
+    }
+
+    .hits-row td:nth-child(2) span[style*="position: absolute"] {
+        position: static !important;
+        left: unset !important;
+        margin-top: 1px !important;
+        font-size: 9px !important;
+        padding: 1px 4px !important;
+    }
+
+    /* Wyraźniejsze punkty na mobile */
+    .hits-row td:nth-child(3) span {
+        font-size: 12px !important;
+        white-space: nowrap !important;
+    }
+}

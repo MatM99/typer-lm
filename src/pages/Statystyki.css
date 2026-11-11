@@ -1,0 +1,101 @@
+/* Wersja komputerowa zachowuje układ dzięki domyślnym stylom w JSX. */
+
+@media (max-width: 768px) {
+
+    /* ESTETYCZNE POPRAWKI PRZYCISKU BONUSÓW */
+    .stats-table-header {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 14px !important;
+        padding: 14px 16px !important;
+    }
+
+    .stats-table-header>span {
+        text-align: center !important;
+        font-size: 16px !important;
+    }
+
+    .stats-bonus-toggle {
+        margin-left: 0 !important;
+        width: 100% !important;
+        justify-content: center !important;
+        background-color: rgba(56, 189, 248, 0.08) !important;
+        border: 1px solid rgba(56, 189, 248, 0.2) !important;
+        color: #38bdf8 !important;
+        padding: 12px !important;
+        border-radius: 8px !important;
+        box-sizing: border-box !important;
+        font-size: 14px !important;
+    }
+
+    /* Powiększamy i wyrównujemy tabelę na telefonach */
+    .stats-table {
+        font-size: 13px !important;
+    }
+
+    .stats-thead-row th {
+        padding: 12px 6px !important;
+        font-size: 11px !important;
+        white-space: nowrap !important;
+    }
+
+    .stats-tbody-row td {
+        padding: 12px 6px !important;
+    }
+
+    /* Zaktualizowane proporcje kolumn, żeby pomieścić powiększone teksty */
+    .stats-col-score {
+        width: 38% !important;
+    }
+
+    .stats-col-count {
+        width: 28% !important;
+    }
+
+    .stats-col-pts {
+        width: 34% !important;
+    }
+
+    /* Znacznie powiększony wynik z meczu */
+    .stats-col-score span:first-child {
+        font-size: 16px !important;
+        display: block;
+        margin-bottom: 6px !important;
+    }
+
+    .stats-badge-bonus,
+    .stats-badge-user {
+        display: inline-block !important;
+        font-size: 10px !important;
+        padding: 3px 6px !important;
+        margin-left: 0 !important;
+        margin-right: 4px !important;
+        margin-top: 2px !important;
+    }
+
+    /* Powiększone liczniki osób */
+    .stats-count-val {
+        display: block;
+        font-size: 14px !important;
+    }
+
+    .stats-count-pct {
+        display: block;
+        margin-left: 0 !important;
+        font-size: 11px !important;
+        margin-top: 2px !important;
+    }
+
+    /* Powiększone kafelki punktów */
+    .stats-badge-pts {
+        font-size: 12px !important;
+        padding: 5px 8px !important;
+        white-space: nowrap !important;
+        letter-spacing: -0.5px !important;
+    }
+
+    .stats-badge-pts-miss {
+        font-size: 12px !important;
+        white-space: nowrap !important;
+    }
+}

@@ -1,0 +1,11 @@
+.loading-screen {
+  background-color: #0f172a;
+  color: #38bdf8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
