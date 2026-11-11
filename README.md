@@ -1,16 +1,63 @@
-# React + Vite
+# ⚽ Typer LM – Champions League Match Predictor
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A full-stack web application designed for predicting UEFA Champions League match outcomes, tracking live leaderboard rankings, analyzing player statistics, and community interaction.
 
-Currently, two official plugins are available:
+🚀 **Live Demo:** (https://typerlm.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Tech Stack & Architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React 18, Vite, JavaScript (ES6+), CSS3
+- **Backend & Database:** Supabase (PostgreSQL)
+- **Database Logic:** PL/pgSQL Triggers, Stored Functions, Row Level Security (RLS)
+- **State & Session Management:** Supabase Auth & Realtime Subscriptions
+- **Deployment & Hosting:** Vercel (CI/CD connected to GitHub `main` branch)
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## ✨ Key Features
+
+- **Match Prediction System:** Allows users to submit and update score predictions prior to match kickoff deadlines (enforced via database triggers).
+- **Automated Point Calculation:** PostgreSQL database trigger (`calculate_prediction_points`) automatically computes user points immediately upon match result entry.
+- **Leaderboard & Player Analytics:** Real-time table rankings, hit-rate percentage stats, and historical performance tracking.
+- **Community Forum:** Built-in discussion board with Supabase Realtime badges for unread posts.
+- **Admin Panel:** Privileged interface for updating match scores, managing schedules, and system overrides.
+
+---
+
+## 🗄️ Database Architecture & Security
+
+The project relies on a relational schema in PostgreSQL configured with security-first practices:
+
+- **Core Tables:** `profiles`, `matches`, `predictions`, `forum_posts`, `teams`, `bracket_matches`.
+- **Database Triggers:** 
+  - Deadline validation before accepting predictions.
+  - Automatic calculation of exact score vs. outcome points upon match result updates.
+- **Row Level Security (RLS):** Granular policy configuration restricting read/write capabilities per user session. `SECURITY DEFINER` functions used where elevated table permissions are strictly required.
+
+---
+
+## 💻 Local Setup & Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/MatM99/typer-lm.git
+   cd typer-lm
+   
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables:**
+   Create a `.env` file in the root directory and specify your Supabase credentials:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```  
